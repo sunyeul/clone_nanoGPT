@@ -1,0 +1,28 @@
+[tool.poetry]
+name ="nanoGPT"
+version = "0.1.0"
+description = "clone nanoGPT"
+authors = ["Junhyeong Kim <res1235@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "*.py", from = "src" }]
+repository = "https://github.com/sunyeul/clone_nanoGPT"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = "^2.0.0"
+numpy = "^1.24.2"
+tqdm = "^4.65.0"
+transformers = "^4.27.3"
+datasets = "^2.10.1"
+tiktoken = "^0.3.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.22.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
