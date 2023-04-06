@@ -194,7 +194,15 @@ class GPT(nn.Module):
     def from_pretrained(cls, model_type, override_args=None):
         pass
     
-    def configure_optimizers(self):
+    def configure_optimizers(self, weight_decay, learning_rate, betas, device_type):
+        """
+        This long function is unfortunately doing something very simple and is being very defensive:
+        We are separating out all parameters of the model into two buckets: those that will experience
+        weight decay for regularization and those that won't (biases, and layernorm/embedding weights).
+        We are then returning the PyTorch optimizer object.
+        """
+        
+        # separate out all parameters to those that will and won't experience regularizing weight decay
         pass
     
     def estimate_mfu(self):
